@@ -38,7 +38,7 @@
 /* The modal's content */
 .modal-content {
   margin: auto;
-  background-color: #f3f3f3;
+  background-color: white;
   position: relative;
   padding: 0;
   outline: 0;
@@ -59,8 +59,8 @@
 .closebtn {
   text-decoration: none;
   float: right;
+  margin-right: 10px;
   font-size: 35px;
-  font-weight: bold;
   color: #fff;
 }
 
@@ -71,14 +71,11 @@
   cursor: pointer;
 }
 
-.container {
-  padding: 2px 16px;
-}
-
 header {
   background-color: red;
   font-size: 25px;
   color: white;
+  width: 100%;
 }
 
 footer {
