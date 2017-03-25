@@ -19,20 +19,24 @@
 <div id="id01" class="modal">
   <div class="modal-dialog">
     <div class="modal-content">
-      <header class="container"> 
+    	<header class="container"> 
         <a href="#" class="closebtn">×</a>
       </header>
       <div class="container">
       	<div class="su">
-      		<input type="text" id="su-email" name="email" placeholder="email">
-      		<input type="password" id="su-password" placeholder="password">
-      		<input type="password" id="su-repassword" name="repassword" placeholder="re-type password">
-      		<button id="signup" onclick="signup();">Sign Up</button>
-      	</div>
+      		<ul>
+      		<li><input type="text" id="su-email" name="email" placeholder="email"></li>
+      		<li><input type="password" id="su-password" placeholder="password"></li>
+      		<li><input type="password" id="su-repassword" name="repassword" placeholder="re-type password"></li>
+      		<li><button id="signup" onclick="signup();">Sign Up</button></li>
+      		</ul>
+      	</div> 
       	<div class="lg">
-    		<input type="text" id="lg-email" placeholder="email">
-    		<input type="password" id="lg-password" placeholder="password">
-    		<button id="login" onclick="login();">Login</button>
+      		<ul>
+    		<li><input type="text" id="lg-email" placeholder="email"><li>
+    		<li><input type="password" id="lg-password" placeholder="password"><li>
+    		<li><button id="login" onclick="login();">Login</button></li>
+    		</ul>
     	</div>
       </div>
     </div>
