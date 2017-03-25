@@ -22,14 +22,6 @@ ul {
     width: 100%;
     text-align: center;
 }
-.container {
-    display: table;
-    table-layout: fixed;
-
-    width:100%;
-    height:100px;
-
-}
 
 .su, .lg {
   display: table-cell;
@@ -54,23 +46,5 @@ input {
     text-decoration: none;
     background-color: red;
     cursor: pointer;
-}
-#modalBtn {
-    cursor: pointer;
-    background-color: red;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    -webkit-transition: padding .5s, font-size .8s; /* For Safari 3.1 to 6.0 */
-    transition: padding .5s, font-size .8s;
-}
-
-#modalBtn:hover {
-   padding: 30px 64px; 
-   font-size: 22px;
 }
 
