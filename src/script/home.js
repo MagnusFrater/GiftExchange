@@ -53,6 +53,7 @@ function initApp () {
       						document.getElementById('up-city').value 				= (childData.city.valueOf() == "%20")? 					"" : childData.city;
       						document.getElementById('up-stateProvinceRegion').value = (childData.stateProvinceRegion.valueOf() == "%20")? 	"" : childData.stateProvinceRegion;
       						document.getElementById('up-zip').value 				= (childData.zip.valueOf() == "%20")? 					"" : childData.zip;
+      						document.getElementById('profilePic').src 				= (childData.profilePic.valueOf() == "%20")? 			"../resources/profile pics/silhouette.jpg" : childData.profilePic;
       					}
     				});
 				});
