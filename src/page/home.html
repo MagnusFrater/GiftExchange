@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<link href="../style/global.css" rel="stylesheet" type="text/css">
+	<title>Gift Exchange</title>
 </head>
 <body>
-<h1> Fuck you Todd</h1>
-<input type="text" id="su-firstname" name="firstname" placeholder="first name"><br>
-    	<input type="text" id="su-lastname" name="lastname" placeholder="last name"><br>
-    	<input type="text" id="su-username" name="username" placeholder="username"><br>
-    	<input type="text" id="su-address" name="address" placeholder="address"><br>
+<img src="../resources/profile pics/silhouette.jpg"><br>
+		<button id="modalBtn">Edit Profile</button>
+		<button id="startgifting">Start Gifting</button><br>
+		<div id="myModal" class="modal">
+
+			  <!-- Modal content -->
+			  <div class="modal-content">
+			    <span class="close">&times;</span>
+					<input type="text" id="su-firstname" name="firstname" placeholder="first name"><br>
+			    	<input type="text" id="su-lastname" name="lastname" placeholder="last name"><br>
+			    	<input type="text" id="su-username" name="username" placeholder="username"><br>
+			    	<input type="text" id="su-address" name="address" placeholder="address"><br>
+			    </div>
+			</div>
+
+	<script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+
+	<script src="../script/global.js"></script>
 </body>
 </html>
