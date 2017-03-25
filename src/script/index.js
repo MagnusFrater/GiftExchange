@@ -31,7 +31,7 @@ function signup () {
       var password = document.getElementById('password').value;
       var repassword = document.getElementById('repassword').value;
 
-      if (!password.equals(repassword)) {
+      if (password.valueOf() != repassword.valueOf()){
       	alert('Passwords don\'t match');
       	return;
       }
