@@ -5,25 +5,45 @@
 	<html lang="en-US">
 
 	<link href="../style/global.css" rel="stylesheet" type="text/css">
+	<link href="../style/home.css" rel="stylesheet" type="text/css">
 	<title>Gift Exchange</title>
 </head>
 <body>
 <img src="../resources/profile pics/silhouette.jpg"><br>
-		<button id="modalBtn" onclick="updateProfile();">Edit Profile</button>
-		<button id="startgifting">Start Gifting</button><br>
-		<button id="logout" onclick="logout();">Log out</button><br>
-		<div id="myModal" class="modal">
+		
+<button id="startgifting">Start Gifting</button><br>
+<button id="logout" onclick="logout();">Log out</button><br>
 
-			  <!-- Modal content -->
-			  <div class="modal-content">
-			    <span class="close">&times;</span>
-					<input type="text" id="su-firstname" name="firstname" placeholder="first name"><br>
-			    	<input type="text" id="su-lastname" name="lastname" placeholder="last name"><br>
-			    	<input type="text" id="su-username" name="username" placeholder="username"><br>
-			    	<input type="text" id="su-address" name="address" placeholder="address"><br>
-			    	<button id="saveprofile">Save Profile</button>
-			    </div>
-			</div>
+<div class="signup">
+<div class="button">
+<a href="#id01" id="modalBtn">Edit Profile</a>
+</div>
+
+<div id="id01" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    	<header class="container"> 
+        <a href="#" class="closebtn">×</a>
+      </header>
+      <div class="container">
+      	<div class="su">
+      		<ul>
+      		<li><input type="text" id="up-firstname" name="firstname" placeholder="first name"></li>
+      		<li><input type="text" id="up-lastname" placeholder="last name"></li>
+      		<li><input type="text" id="up-username" name="username" placeholder="username"></li>
+      		<li><input type="text" id="up-street" name="address" placeholder="street address"></li>
+      		<li><input type="text" id="up-city" name="city" placeholder="city"></li>
+      		<li><input type="text" id="up-stateProvinceRegion" name="state" placeholder="state"></li>
+      		<li><input type="text" id="up-zip" name="zipcode" placeholder="zip code"></li>
+
+      		<li><button id="updateprofile" onclick="updateProfile();">Update Profile</button></li>
+      		</ul>
+      	</div> 
+      </div>
+    </div>
+  </div>
+</div>
+
 
 	<script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
 
