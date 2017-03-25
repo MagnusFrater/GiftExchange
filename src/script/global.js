@@ -32,3 +32,15 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+// FIREBASE
+
+function logout () {
+    if (firebase.auth().currentUser) {
+      // logout
+        firebase.auth().signOut();
+
+        // go to index.html
+        window.location.href = "../index.html";
+    }
+}
