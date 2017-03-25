@@ -1,3 +1,17 @@
+window.onload = function () {
+	initApp();
+}
+
+function initApp () {
+	firebase.auth().onAuthStateChanged(function (user) {
+		if (user) {
+			window.location.href = "page/home.html";
+		} else {
+			
+		}
+	});
+}
+
 // signing up
 function signup () {
 	  var email = document.getElementById('su-email').value;
