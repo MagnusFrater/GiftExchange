@@ -1,7 +1,50 @@
 ul {
-    overflow: auto;
+    overflow: inherit;
     list-style-type: none;
     height: 100%
     width: 100%;
     text-align: center;
+}
+
+input {
+    width: 80%;
+    padding-top: 20px;
+    border: none;
+    border-bottom: 2px solid red;
+    font-size: 2.5rem;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.button {
+	width: 100%;
+	text-align: center;
+}
+
+#list1, #list2 {
+  display: table-cell;
+    height: 200px;
+    padding-right: 10px;
+
+}
+
+#updateprofile, #startgifting, #logout {
+    text-align: center;
+    cursor: pointer;
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#updateprofile {
+	width: 80%;
+
+}
+.profile {
+	text-align: center;
+	width: 100%;
 }
