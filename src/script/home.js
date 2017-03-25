@@ -46,13 +46,13 @@ function initApp () {
 
       					// if this is the corrct user, put data where it belongs in the profile area
       					if (user.email.valueOf() == childData.email.valueOf()) {
-      						document.getElementById('up-username').value = childData.username;
-      						document.getElementById('up-firstname').value = childData.firstName;
-      						document.getElementById('up-lastname').value = childData.lastName;
-      						document.getElementById('up-street').value = childData.street;
-      						document.getElementById('up-city').value = childData.city;
-      						document.getElementById('up-stateProvinceRegion').value = childData.stateProvinceRegion;
-      						document.getElementById('up-zip').value = childData.zip;
+      						document.getElementById('up-username').value 			= (childData.username.valueOf() == "%20")? 				"" : childData.username;
+      						document.getElementById('up-firstname').value 			= (childData.firstName.valueOf() == "%20")? 			"" : childData.firstName;
+      						document.getElementById('up-lastname').value 			= (childData.lastName.valueOf() == "%20")? 				"" : childData.lastName;
+      						document.getElementById('up-street').value 				= (childData.street.valueOf() == "%20")? 				"" : childData.street;
+      						document.getElementById('up-city').value 				= (childData.city.valueOf() == "%20")? 					"" : childData.city;
+      						document.getElementById('up-stateProvinceRegion').value = (childData.stateProvinceRegion.valueOf() == "%20")? 	"" : childData.stateProvinceRegion;
+      						document.getElementById('up-zip').value 				= (childData.zip.valueOf() == "%20")? 					"" : childData.zip;
       					}
     				});
 				});
