@@ -41,14 +41,14 @@ function signup () {
             var ref = firebase.database().ref().child("user");
             var data = {
                 email: email,
-                username: 'null',
-                firstName: 'null',
-                lastName: 'null',
-                street: 'null',
-                city: 'null',
-                stateProvinceRegion: 'null',
-                zip: 'null',
-                profilePic: 'null',
+                username: '%20',
+                firstName: '%20',
+                lastName: '%20',
+                street: '%20',
+                city: '%20',
+                stateProvinceRegion: '%20',
+                zip: '%20',
+                profilePic: '%20',
                 ratingSum: '0',
                 ratingCount: '0'
             }
