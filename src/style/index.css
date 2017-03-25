@@ -1,18 +1,35 @@
+
 .title {
     width: 100%;
     text-align: center;
     font-size: 12rem;
+    animation: titleDrop 1.25s;
 }
 
+@keyframes titleDrop {
+    from {opacity: 0;}
+    to {opacity: 1;}
+
+  0% {
+    transform: translateY(70%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 .ipa {
     width: 100%;
     text-align: center;
     font-size: 3rem;
+    animation-delay: .5s;
+    animation: titleDrop 1.25s;
 }
 
 .button {
     width: 100%;
     text-align: center;
+    animation-delay: 1s;
+    animation: titleDrop 1.25s;
 }
 
 ul {
@@ -50,5 +67,12 @@ input {
     background-color: red;
     cursor: pointer;
     font-size: 1.5rem;
+    -webkit-transition: padding .5s, font-size .8s; /* For Safari 3.1 to 6.0 */
+    transition: padding .5s, font-size .8s;
+}
+
+#signup:hover, #login:hover {
+    padding: 18px 36px;
+    font-size: 25px;
 }
 
