@@ -104,23 +104,23 @@ function updateProfile() {
 
 // returns 1 if all profile info is good, 0 if otherwise
 function isGiftWorthy () {
-	var username = document.getElementById('username').value;
-	var firstname = document.getElementById('firstname').value;
-	var lastname = document.getElementById('lastname').value;
-	var street = document.getElementById('street').value;
-	var city = document.getElementById('city').value;
-	var stateProvinceRegion = document.getElementById('stateProvinceRegion').value;
-	var zip = document.getElementById('zip').value;
-	var profilePic = document.getElementById('profilePic').value;
+	var username = 				document.getElementById('username').value;
+	var firstname = 			document.getElementById('firstname').value;
+	var lastname = 				document.getElementById('lastname').value;
+	var street = 				document.getElementById('street').value;
+	var city = 					document.getElementById('city').value;
+	var stateProvinceRegion = 	document.getElementById('stateProvinceRegion').value;
+	var zip = 					document.getElementById('zip').value;
+	var profilePic = 			document.getElementById('profilePic').value;
 
-	if (username.valueOf() == '%20' 			||
-		firstName.valueOf() == '%20' 			||
-		lastName.valueOf() == '%20' 			||
-		street.valueOf() == '%20' 				||
-		city.valueOf() == '%20' 				||
-		stateProvinceRegion.valueOf() == '%20' 	||
-		zip.valueOf() == '%20' 					||
-		profilePic.valueOf() == '%20') {
+	if (username.valueOf() 				== "" ||
+		firstName.valueOf() 			== "" ||
+		lastName.valueOf() 				== "" ||
+		street.valueOf() 				== "" ||
+		city.valueOf() 					== "" ||
+		stateProvinceRegion.valueOf() 	== "" ||
+		zip.valueOf() 					== "" ||
+		profilePic.valueOf() 			== ""	) {
 			return 0;
 	}
 
@@ -128,5 +128,10 @@ function isGiftWorthy () {
 }
 
 function match () {
+	if (!isGiftWorthy()) {
+		alert("Profile is incomplete!");
+		return;
+	}
 
+	alert("Will receive text when matched!");
 }

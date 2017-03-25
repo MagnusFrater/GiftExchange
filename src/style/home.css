@@ -46,7 +46,13 @@ input {
 }
 .profile {
 	text-align: center;
-	width: 100%;
+  width: 100%;
+}
+
+#profilePic {
+  width: 100px;
+  min-width: 100px;
+  max-width: 100px;
 }
 
 div.stars {
@@ -77,6 +83,3 @@ label.star:before {
   content: '\f006';
   font-family: FontAwesome;
 }
-
- 
-
