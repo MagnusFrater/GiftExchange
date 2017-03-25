@@ -9,14 +9,19 @@
 	<title>Gift Exchange</title>
 </head>
 <body>
+
+<div class="profile">
 <img src="../resources/profile pics/silhouette.jpg"><br>
-		
-<button id="startgifting">Start Gifting</button><br>
-<button id="logout" onclick="logout();">Log out</button><br>
+</div>
 
 <div class="signup">
 <div class="button">
 <a href="#id01" id="modalBtn">Edit Profile</a>
+</div>
+
+<div class="button">
+<button id="startgifting">Start Gifting</button><br>
+<button id="logout" onclick="logout();">Log out</button><br>
 </div>
 
 <div id="id01" class="modal">
@@ -26,18 +31,23 @@
         <a href="#" class="closebtn">×</a>
       </header>
       <div class="container">
-      	<div class="su">
+      	<div id="list1">
       		<ul>
       		<li><input type="text" id="up-firstname" name="firstname" placeholder="first name"></li>
       		<li><input type="text" id="up-lastname" placeholder="last name"></li>
       		<li><input type="text" id="up-username" name="username" placeholder="username"></li>
       		<li><input type="text" id="up-street" name="address" placeholder="street address"></li>
+      		</ul>
+      		</div>
+      	<div id="list2">
+      		<ul>
       		<li><input type="text" id="up-city" name="city" placeholder="city"></li>
       		<li><input type="text" id="up-stateProvinceRegion" name="state" placeholder="state"></li>
       		<li><input type="text" id="up-zip" name="zipcode" placeholder="zip code"></li>
 
       		<li><button id="updateprofile" onclick="updateProfile();">Update Profile</button></li>
       		</ul>
+      		</div>
       	</div> 
       </div>
     </div>
