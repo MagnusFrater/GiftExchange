@@ -3,27 +3,39 @@
 <head>
 	<link href="style/index.css" rel="stylesheet" type="text/css">
 	<link href="style/global.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
 	<title>Gift Exchange</title>
 </head>
 <body>
 
+<div class="title">Jift It</div>
+<div class="ipa">(/gift it/)</div>
 <!-- Trigger/Open The Modal -->
-<button id="modalBtn">Sign Up</button>
+<div class="signup">
+<div class="button">
+<a href="#id01" id="modalBtn">Sign Up</a>
+</div>
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    	
-    	<input type="text" id="su-email" name="email" placeholder="email">
-    	<input type="text" id="lg-email" placeholder="email"><br>
-    	<input type="password" id="su-password" placeholder="password">
-    	<input type="password" id="lg-password" placeholder="password"><br> 
-    	<input type="password" id="su-repassword" name="repassword" placeholder="re-type password"><br>
-    	<button id="signup" onclick="signup();">Sign Up</button>
-    	<button id="login" onclick="login();">Login</button>
+<div id="id01" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <header class="container"> 
+        <a href="#" class="closebtn">×</a>
+      </header>
+      <div class="container">
+      	<div class="su">
+      		<input type="text" id="su-email" name="email" placeholder="email">
+      		<input type="password" id="su-password" placeholder="password">
+      		<input type="password" id="su-repassword" name="repassword" placeholder="re-type password">
+      		<button id="signup" onclick="signup();">Sign Up</button>
+      	</div>
+      	<div class="lg">
+    		<input type="text" id="lg-email" placeholder="email">
+    		<input type="password" id="lg-password" placeholder="password">
+    		<button id="login" onclick="login();">Login</button>
+    	</div>
+      </div>
+    </div>
   </div>
 </div>
 
