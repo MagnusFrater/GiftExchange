@@ -48,7 +48,18 @@ function signup () {
 
       // Sign in with email and pass.
       // [START createwithemail]
-      firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+      firebase.auth().createUserWithEmailAndPassword(email, password).then(function(user) {
+            var ref = firebase.database().ref().child("user");
+            var data = {
+                email: email
+            }
+            ref.child(user.uid).set(data).then(function(ref) {//use 'child' and 'set' combination to save data in your own generated key
+                console.log("Saved");
+            }, function(error) {
+                console.log(error); 
+            });
+        })
+        .catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
@@ -97,4 +108,11 @@ function login () {
         // [END authwithemail]
       
       document.getElementById('login').disabled = true;
+}
+
+function editProfile() {
+	var firstname = document.getElementById('su-firstname').value;
+	  var lastname = document.getElementById('su-lastname').value;
+	  var username = document.getElementById('su-username').value;
+	  var address = document.getElementById('su-address').value;
 }
