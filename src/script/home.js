@@ -8,7 +8,7 @@ function initApp () {
             // initialize empty user database info
             var ref = firebase.database().ref().child("user");
             var data = {
-                email: '%20',
+                email: user.email,
                 username: '%20',
                 firstName: '%20',
                 lastName: '%20',
