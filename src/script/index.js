@@ -36,29 +36,7 @@ function signup () {
 
       // Sign in with email and pass.
       // [START createwithemail]
-      firebase.auth().createUserWithEmailAndPassword(email, password).then(function(user) {
-            // initialize empty user database info
-            var ref = firebase.database().ref().child("user");
-            var data = {
-                email: email,
-                username: '%20',
-                firstName: '%20',
-                lastName: '%20',
-                street: '%20',
-                city: '%20',
-                stateProvinceRegion: '%20',
-                zip: '%20',
-                profilePic: '%20',
-                ratingSum: '0',
-                ratingCount: '0'
-            }
-            ref.child(user.uid).set(data).then(function(ref) {//use 'child' and 'set' combination to save data in your own generated key
-                console.log("Saved");
-            }, function(error) {
-                console.log(error); 
-            });
-        })
-        .catch(function(error) {
+      firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
