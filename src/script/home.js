@@ -1,10 +1,14 @@
+var globalUser = null;
+
 window.onload = function () {
 	initApp();
 }
 
+
 function initApp () {
 	firebase.auth().onAuthStateChanged(function (user) {
 		if (user) {
+			globalUser = user;
 			// if 'user' is brand new
 			if (user.state < 1) {
 				alert(1);
@@ -61,6 +65,12 @@ function initApp () {
 
 // takes new profile data and updates the database
 function updateProfile() {
+
+	// Get user ref
+
+
+	// Update user data 
+
 	var username = document.getElementById('up-username').value;
 	var firstname = document.getElementById('up-firstname').value;
 	var lastname = document.getElementById('up-lastname').value;
@@ -70,7 +80,25 @@ function updateProfile() {
 	var zip = document.getElementById('up-zip').value;
 	//var profilePic = document.getElementById('up-profilePic').value;
 
-	console.log(user);
+	console.log(globalUser);
+
+	var data = {
+	    email: globalUser.email,
+	    username: username,
+	    firstName: firstname,
+	    lastName: lastname,
+	    street: street,
+	    city: city,
+	    stateProvinceRegion: stateProvinceRegion,
+	    zip: zip
+    }
+	var ref = firebase.database().ref().child("user");
+
+    ref.child(globalUser.uid).update(data).then(function(ref) {//use 'child' and 'set' combination to save data in your own generated key
+        console.log("Saved");
+    }, function(error) {
+        console.log(error); 
+    });
 }
 
 // returns 1 if all profile info is good, 0 if otherwise
@@ -98,3 +126,6 @@ function isGiftWorthy () {
 	return 1;
 }
 
+function match () {
+
+}
