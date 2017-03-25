@@ -48,3 +48,35 @@ input {
 	text-align: center;
 	width: 100%;
 }
+
+div.stars {
+  width: 60%;
+  text-align: center;
+  display: inline-block;
+
+}
+ 
+input.star { display: none; }
+ 
+label.star {
+  float: right;
+  padding: 10px;
+  font-size: 36px;
+  color: #444;
+  transition: all .2s;
+}
+ 
+input.star:checked ~ label.star:before {
+  content: '\f005';
+  color: #FD4;
+  transition: all .25s;
+}
+
+input.star-1:checked ~ label.star:before { color: #F62; }
+label.star:before {
+  content: '\f006';
+  font-family: FontAwesome;
+}
+
+ 
+
