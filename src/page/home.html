@@ -31,13 +31,13 @@
 </div>
 
 <div class="signup">
-<div class="button">
-<a href="#id01" id="modalBtn">Profile</a>
-</div>
 
 <div class="button">
-<button id="startgifting" onclick="match();">Start Gifting</button><br>
-<button id="logout" onclick="logout();">Log out</button><br>
+<ul>
+<li><a href="#id01" id="modalBtn">Profile</a><li>
+<li><button id="startgifting" onclick="match();">Start Gifting</button></li>
+<li><button id="logout" onclick="logout();">Log out</button></li>
+</ul>
 </div>
 
 <div id="id01" class="modal">
@@ -61,15 +61,18 @@
       		<li><input type="text" id="up-city" name="city" placeholder="city"></li>
       		<li><input type="text" id="up-stateProvinceRegion" name="state" placeholder="state"></li>
       		<li><input type="text" id="up-zip" name="zipcode" placeholder="zip code"></li>
-
-      		<li><button id="updateprofile" onclick="updateProfile();">Update</button></li>
+          <li><input type="text" id="up-profilepic" name="profilepic" placeholder="profile URL"></li>
       		</ul>
       		</div>
       	</div> 
+        <div class="updateprofile"><button id="up" onclick="updateProfile();">Update</button></div>
       </div>
     </div>
   </div>
 </div>
+
+<div class="title">Jift It</div>
+<div class="subtitle">(/gift it/)</div>
 
 
 	<script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>

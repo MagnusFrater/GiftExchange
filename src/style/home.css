@@ -1,4 +1,9 @@
-ul {
+* {
+    font-family: 'Lato', sans-serif;
+    background-color: #D7CEC7;
+    color: #565656;
+}
+.container ul {
     overflow: inherit;
     list-style-type: none;
     height: 100%
@@ -6,11 +11,20 @@ ul {
     text-align: center;
 }
 
+.button ul {
+  list-style-type: none;
+  width: 93%;
+}
+.button li {
+  display: inline;
+}
+
+
 input {
     width: 80%;
     padding-top: 20px;
     border: none;
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid #76323F;
     font-size: 2.5rem;
     outline: none;
     margin-bottom: 10px;
@@ -23,26 +37,46 @@ input {
 
 #list1, #list2 {
   display: table-cell;
-    height: 200px;
-    padding-right: 10px;
-
+  height: 200px;
+  padding-right: 10px;
 }
 
 #updateprofile, #startgifting, #logout {
-    text-align: center;
-    cursor: pointer;
-    background-color: red;
+    background-color: #76323F;
     border: none;
-    color: white;
+    color: #D7CEC7;
     padding: 15px 32px;
+    text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    -webkit-transition: padding .5s, font-size .8s; /* For Safari 3.1 to 6.0 */
+    transition: padding .5s, font-size .8s;
 }
 
-#updateprofile {
-	width: 80%;
+#startgifting:hover, #logout:hover {
+   padding: 30px 64px; 
+   font-size: 22px;
+}
 
+
+.updateprofile {
+	width: 100%;
+  cursor: pointer;
+  text-align: center;
+}
+
+#up {
+  width: 50%;
+  background-color: #76323F;
+    border: 1px solid 565656;
+    color: #D7CEC7;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
 }
 .profile {
 	text-align: center;
@@ -52,7 +86,10 @@ input {
 #profilePic {
   width: 100px;
   min-width: 250px;
-  max-width: 25a0px;
+  max-width: 250px;
+  max-height: 250px;
+  border: 2px solid #76323F;
+  border-radius: 50%;
 }
 
 div.stars {
@@ -82,4 +119,16 @@ input.star-1:checked ~ label.star:before { color: #F62; }
 label.star:before {
   content: '\f006';
   font-family: FontAwesome;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+}
+
+.subtitle {
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
 }

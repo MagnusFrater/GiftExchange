@@ -1,3 +1,8 @@
+* {
+    font-family: 'Lato', sans-serif;
+    background-color: #FFD39C;
+    color: #565656;
+}
 .match {
   margin-top: 100px;
   width: 100%;
@@ -46,7 +51,7 @@ label.star:before {
 #rate {
   text-align: center;
     cursor: pointer;
-    background-color: red;
+    background-color: #76323F;
     border: none;
     color: white;
     padding: 15px 32px;
