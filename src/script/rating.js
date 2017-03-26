@@ -35,8 +35,8 @@ function initApp () {
 }
 
 function rateFriendo () {
-	resetFriendo();
 	updateState("profile-complete");
+	resetFriendo();
 }
 
 // updates currently logged in user's state
@@ -49,8 +49,6 @@ function updateState (state) {
 
     ref.child(globalUser.uid).update(data).then(function(ref) {//use 'child' and 'set' combination to save data in your own generated key
         console.log("Updated user state.");
-
-        window.location.href = "home.html";
     }, function(error) {
         console.log(error); 
     });
@@ -67,7 +65,7 @@ function resetFriendo () {
 	console.log(globalUser);
 
     ref.child(globalUser.uid).update(data).then(function(ref) {//use 'child' and 'set' combination to save data in your own generated key
-        
+        //window.location.href = "home.html";
     }, function(error) {
         console.log(error); 
     });
