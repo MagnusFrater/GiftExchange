@@ -90,6 +90,7 @@ function initApp () {
       					document.getElementById('up-stateProvinceRegion').value = (childData.stateProvinceRegion.valueOf() == "%20")? 	"" : childData.stateProvinceRegion;
       					document.getElementById('up-zip').value 				= (childData.zip.valueOf() == "%20")? 					"" : childData.zip;
       					document.getElementById('profilePic').src 				= (childData.profilePic.valueOf() == "%20")? 			"../resources/profile pics/silhouette.jpg" : childData.profilePic;
+      					document.getElementById('up-profilepic').value          = (childData.profilePic.valueOf() == "%20")?			"" : childData.profilePic;
       				}
 
       				console.log("Profile info pulled.");
@@ -190,15 +191,11 @@ function isGiftWorthy () {
 
 function match () {
 	var popup = document.getElementById("myPopup");
-	if (!isGiftWorthy()) {
-		//alert("Profile is incomplete!");
+	if (isGiftWorthy() === 0) {
 		popup.innerHTML="Profile is incomplete!";
-		setTimeout(function(){ popup.classList.toggle("show"); }, 5000);
 		return;
 	}
-	popup.innerHTML="We will notify you when you get a match!";
-    popup.classList.toggle("show");
-    
+	popup.innerHTML="We will notify you when you get a match!";   
 }
 
 // When the user clicks on <div>, open the 
