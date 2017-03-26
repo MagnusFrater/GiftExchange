@@ -269,7 +269,14 @@ function searchForUnmatchedUser () {
 				if (childData.email.valueOf() != globalUser.email.valueOf() &&
 				 	childData.state.valueOf() == "looking") {
 
-					updateFriendo(childData);
+					var data = {
+						username: childData.username,
+						email: childData.email,
+						state: childData.state,
+						profilePic: childData.profilePic
+					}
+
+					updateFriendo(data);
 				}
 
 				console.log("Profile info pulled.");
@@ -292,7 +299,14 @@ function checkIfMatched (user) {
 					childData.friendo != "%20" &&
 					user.email.valueOf() == childData.friendo.email.valueOf()) {
 
-					updateFriendo(childData);
+					var data = {
+						username: childData.username,
+						email: childData.email,
+						state: childData.state,
+						profilePic: childData.profilePic
+					}
+
+					updateFriendo(data);
 				}
 
 				console.log("Profile info pulled.");
