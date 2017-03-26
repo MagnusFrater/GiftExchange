@@ -15,28 +15,37 @@
 	</div>
 	<div class="status">
 	<div class="status1">
-		X
-		  <span> . . . . </span>
-		  <span class="check" id="check1-1">&#10004;</span>
-		  <span> . . . . </span>
-		  <span class="check" id="check2-1">&#10004;</span>
-		  <span> . . . . </span>
-		  <span class="check" id="check3-1">&#10004;</span>
+		<span class="x" id="x-1">X</span>
+		<span> . . . . </span>
+		<span class="check" id="check1-1">&#10004;</span>
+		<span> . . . . </span>
+		<span class="check" id="check2-1">&#10004;</span>
+		<span> . . . . </span>
+		<span class="check" id="check3-1">&#10004;</span>
 	</div>
 
+	<p id="status-1"></p>
+
 	<div class="status2">
-		X
-		  <span> . . . . </span>
-		  <span class="check" id="check1-2">&#10004;</span>
-		  <span> . . . . </span>
-		  <span class="check" id="check2-2">&#10004;</span>
-		  <span> . . . . </span>
-		  <span class="check" id="check3-2">&#10004;</span>
+		<span class="x" id="x-2">X</span>
+		<span> . . . . </span>
+		<span class="check" id="check1-2">&#10004;</span>
+		<span> . . . . </span>
+		<span class="check" id="check2-2">&#10004;</span>
+		<span> . . . . </span>
+		<span class="check" id="check3-2">&#10004;</span>
 	</div>
+
+	<p id="status-2"></p>
 	</div>
+
+	<button id="toHome" onclick="toHome();">Home page</button>
+	<button id="actionButton" onclick="doAction();"></button>
+
 	<script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
 
 	<script src="../script/global.js"></script>
+	<script src="../script/status.js"></script>
 </body>
 
 </html>

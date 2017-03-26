@@ -146,14 +146,15 @@ function updateInterests () {
 	var interests = document.getElementById('interests').value;
 
 	var data = {
-		interests: interests
+		interests:  interests,
+		state:      (isGiftWorthy() === 0)? 'incomplete-profile' : 'profile-complete'
 	}
 
 	var ref = firebase.database().ref().child("user");
 
     ref.child(globalUser.uid).update(data).then(function(ref) {//use 'child' and 'set' combination to save data in your own generated key
         console.log("Updated profile info.");
-        window.location.href = "status.html";
+        //window.location.href = "status.html";
     }, function(error) {
         console.log(error); 
     });
@@ -168,6 +169,7 @@ function isGiftWorthy () {
 	var city 					= 	document.getElementById('up-city').value;
 	var stateProvinceRegion 	= 	document.getElementById('up-stateProvinceRegion').value;
 	var zip 					= 	document.getElementById('up-zip').value;
+	var interests               =	document.getElementById('interests').value;
 	var profilePic 				= 	document.getElementById('profilePic').src;
 
 	if (username.valueOf() 				== "" ||
@@ -177,6 +179,7 @@ function isGiftWorthy () {
 		city.valueOf() 					== "" ||
 		stateProvinceRegion.valueOf() 	== "" ||
 		zip.valueOf() 					== "" ||
+		interests.valueOf()             == "" ||
 		profilePic.valueOf() 			== "../resources/profile pics/silhouette.jpg"	) {
 			console.log("Not gift worthy.");
 			return 0;
@@ -193,4 +196,8 @@ function match () {
 		return;
 	}
 	popup.innerHTML="We will notify you when you get a match!";   
+}
+
+function toStatus () {
+	window.location.href = "status.html";
 }

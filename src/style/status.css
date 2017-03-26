@@ -2,9 +2,7 @@
     font-family: 'Lato', sans-serif;
     background-color: #D7CEC7;
 }
-#check1-1 {
-  color: green;
-}
+
 .status:first-letter {
   color: red;
 }
@@ -26,4 +24,22 @@
   width: 100%;
   text-align: center;
   font-size: 50px;
+}
+
+#pic1 {
+  width: 100px;
+  min-width: 250px;
+  max-width: 250px;
+  max-height: 250px;
+  border: 2px solid #76323F;
+  border-radius: 50%;
+}
+
+#pic2 {
+  width: 100px;
+  min-width: 250px;
+  max-width: 250px;
+  max-height: 250px;
+  border: 2px solid #76323F;
+  border-radius: 50%;
 }

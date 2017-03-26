@@ -1,0 +1,28 @@
+to do
+------
+make popup when successfully updating interests
+make popup when succesffully updating profile
+profile picture 'circle' is actually an oval
+rating stars are broken on linux/firefox?
+on status.html, click on either profile pic and get modal that displays their shit (ie. username, interests, address)
+
+
+user states
+------------
+incomplete-profile  - when profile is incomplete
+profile-complete	- when profile is complete
+looking				- when you're looking for a match
+matched				- when you're matched up
+gift-sent			- when you've sent your gift
+gift-received		- when you've received your gift
+rate-friendo		- when you're ready to rate your friendo
+
+
+action button text (status.html)
+---------------------------------
+"Finish your profile!"
+"Look for friendo!"
+"Waiting for match..."
+"I sent my gift!"
+"I received my gift!"
+"I'm ready to rate my friendo!"
