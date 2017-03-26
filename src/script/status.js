@@ -38,6 +38,8 @@ function initApp () {
       						document.getElementById('check3-1').style.color = "black";
 
       						document.getElementById('actionButton').innerHTML = "Finish your profile!";
+      						document.getElementById('actionButton').style.opacity = '.5';
+      						document.getElementById('actionButton').style.cursor = 'auto';
       						document.getElementById('actionButton').disabled = true;
       					}
 
@@ -48,6 +50,8 @@ function initApp () {
       						document.getElementById('check3-1').style.color = "black";
 
       						document.getElementById('actionButton').innerHTML = "Look for friendo!";
+      						document.getElementById('actionButton').style.opacity = '1';
+      						document.getElementById('actionButton').style.cursor = 'pointer';
       						document.getElementById('actionButton').disabled = false;
       					}
 

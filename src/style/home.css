@@ -76,19 +76,61 @@ input {
   text-align: center;
 }
 
+#headTitle, #headInterests {
+  margin-top: 50px;
+  background-color: #76323F;
+  color: #D7CEC7;
+}
+
 textarea {
   font-size: 30px;
   width: 99.2%;
   overflow-x: hidden;
 }
 
+/* The alert message box */
+.alert {
+    position: relative;
+    padding: 20px;
+    background-color: red; /* Red */
+    color: white;
+    display: none;
+    z-index: 1;
+}
+
+#interest-alert, #interest-alert2 {
+  width: 50%;
+  text-align: center;
+  margin-left: 35%;
+  margin-bottom: 45px;
+}
+
+/* The close button */
+.alert .closebtn {
+    color: black;
+    font-weight: bold;
+    margin-right: 240px;
+    font-size: 22px;
+    line-height: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 2;
+    background-color: transparent; 
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+    color: white;
+}
+
 .interestsbutton {
   width: 100%;
   text-align: center;
 }
+
 #int {
   text-align: center;
-  background-color: #76323F;
+  background-color: #565656;
     border: 1px solid 565656;
     color: #D7CEC7;
     padding: 15px 32px;
@@ -96,12 +138,13 @@ textarea {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    cursor: pointer; 
+    cursor: pointer;
+    outline: none; 
 }
 
 #up {
   width: 50%;
-  background-color: #76323F;
+  background-color: #565656;
     border: 1px solid 565656;
     color: #D7CEC7;
     padding: 15px 32px;
@@ -132,7 +175,8 @@ div.stars {
 
 }
  
-input.star { display: none; }
+input.star { display: none
+  ; }
  
 label.star {
   float: right;

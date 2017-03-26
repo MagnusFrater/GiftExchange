@@ -3,6 +3,14 @@
     background-color: #D7CEC7;
 }
 
+.logo {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  background-color: transparent;
+  margin-top: 14%;
+  font-size: 25px;
+}
 .status:first-letter {
   color: red;
 }

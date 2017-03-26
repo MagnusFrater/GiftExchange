@@ -50,9 +50,15 @@ ul {
 
 .su, .lg {
   display: table-cell;
-    height: 250px;
+    height: 350px;
     padding-top: 20px;
     margin-right: 20px;
+}
+
+#headTitle {
+    background-color: #76323F;
+    color: #D7CEC7;
+    margin-top: 30px;
 }
 
 input {
@@ -81,7 +87,7 @@ input {
 
 #signup:hover, #login:hover {
     padding: 18px 36px;
-    font-size: 25px;
+    font-size: 1.52rem;
 }
 
 @keyframes titleDrop {

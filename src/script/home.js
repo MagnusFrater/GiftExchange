@@ -132,10 +132,14 @@ function updateProfile() {
 	    state:                  (isGiftWorthy() === 0)? 'incomplete-profile' : 'profile-complete'
     }
 
+    var interests = document.getElementById('interests').value;
+	var alert = document.getElementById('interest-alert2');
+
 	var ref = firebase.database().ref().child("user");
 
     ref.child(globalUser.uid).update(data).then(function(ref) {//use 'child' and 'set' combination to save data in your own generated key
         console.log("Updated profile info.");
+        alert.style.display = 'inline';
     }, function(error) {
         console.log(error); 
     });
@@ -144,6 +148,7 @@ function updateProfile() {
 function updateInterests () {
 	// update user interests
 	var interests = document.getElementById('interests').value;
+	var alert = document.getElementById('interest-alert');
 
 	var data = {
 		interests:  interests,
@@ -155,6 +160,7 @@ function updateInterests () {
     ref.child(globalUser.uid).update(data).then(function(ref) {//use 'child' and 'set' combination to save data in your own generated key
         console.log("Updated profile info.");
         //window.location.href = "status.html";
+        alert.style.display = 'inline';
     }, function(error) {
         console.log(error); 
     });
