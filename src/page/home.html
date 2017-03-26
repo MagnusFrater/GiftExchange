@@ -35,7 +35,7 @@
 <div class="button">
 <ul>
 <li><a href="#id01" id="modalBtn">Profile</a><li>
-<li><button id="startgifting" class="popup" onclick="match(); popup();"><span class="popuptext" id="myPopup"></span>Start Gifting</button></li>
+<li><a href="#id02" id="modalBtn2">Start Gifting</a></li>
 <li><button id="logout" onclick="logout();">Log out</button></li>
 </ul>
 </div>
@@ -43,29 +43,46 @@
 <div id="id01" class="modal">
   <div class="modal-dialog">
     <div class="modal-content">
-    	<header class="container"> 
+      <header class="container"> 
         <a href="#" class="closebtn">×</a>
       </header>
 
       <div class="container">
-      	<div id="list1">
-      		<ul>
-      		<li><input type="text" id="up-firstname" name="firstname" placeholder="first name"></li>
-      		<li><input type="text" id="up-lastname" placeholder="last name"></li>
-      		<li><input type="text" id="up-username" name="username" placeholder="username"></li>
-      		<li><input type="text" id="up-street" name="address" placeholder="street address"></li>
-      		</ul>
-      		</div>
-      	<div id="list2">
-      		<ul>
-      		<li><input type="text" id="up-city" name="city" placeholder="city"></li>
-      		<li><input type="text" id="up-stateProvinceRegion" name="state" placeholder="state"></li>
-      		<li><input type="text" id="up-zip" name="zipcode" placeholder="zip code"></li>
+        <div id="list1">
+          <ul>
+          <li><input type="text" id="up-firstname" name="firstname" placeholder="first name"></li>
+          <li><input type="text" id="up-lastname" placeholder="last name"></li>
+          <li><input type="text" id="up-username" name="username" placeholder="username"></li>
+          <li><input type="text" id="up-street" name="address" placeholder="street address"></li>
+          </ul>
+          </div>
+        <div id="list2">
+          <ul>
+          <li><input type="text" id="up-city" name="city" placeholder="city"></li>
+          <li><input type="text" id="up-stateProvinceRegion" name="state" placeholder="state"></li>
+          <li><input type="text" id="up-zip" name="zipcode" placeholder="zip code"></li>
           <li><input type="text" id="up-profilepic" name="profilepic" placeholder="profile URL"></li>
-      		</ul>
-      		</div>
-      	</div> 
+          </ul>
+          </div>
+        </div> 
         <div class="updateprofile"><button id="up" onclick="updateProfile();">Update</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="id02" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <header class="container"> 
+        <a href="#" class="closebtn">×</a>
+      </header>
+        <div id="list3">
+          <textarea placeholder="Insert your interests here" rows="4" cols="50"></textarea>
+          </div>
+        </div> 
+        <div class="updateprofile"><button id="interests" onclick="updateProfile();">Update</button></div>
       </div>
     </div>
   </div>
