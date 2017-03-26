@@ -10,6 +10,7 @@ function initApp () {
 		if (user) {
 			globalUser = user;
 
+			/*
             // initialize empty database info if user data doesn't already exist
             if (initUser(user) == 0) {
             	// initialize empty user database info
@@ -37,6 +38,7 @@ function initApp () {
                 	console.log(error); 
             	});
             }
+            */
 
             // get 'user' data to populate the profile page
             var ref = firebase.database().ref().child("user");
@@ -72,6 +74,7 @@ function initApp () {
 	});
 }
 
+/*
 function doesUserExist(user, databaseUser){
 	return new Promise(function(resolve, reject){
 		if(user.email.valueOf() === databaseUser.email.valueOf()){
@@ -98,6 +101,7 @@ function initUser(user){
 			});
 	})
 }
+*/
 
 // takes new profile data and updates the database
 function updateProfile() {

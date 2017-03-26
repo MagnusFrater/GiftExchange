@@ -21,6 +21,33 @@ function findMatch () {
 
 
 
+function testDoesUserExist(user, databaseUser){
+	return new Promise(function(resolve, reject){
+		if(user.email.valueOf() === databaseUser.email.valueOf()){
+			resolve(true);
+		} else {
+			resolve(false);
+		}
+	})
+}
+
+function testInitUser(user){
+	var userstable = firebase.database().ref().child('user');
+	userstable.on('value', function(snapshot){
+		var promList = []
+		snapshot.forEach(function(child){
+			promList.push(doesUserExist(user, child.val()))
+		});
+		Promise
+		.all(promList)
+			.then(function(data){
+				console.log(data);
+				console.log(data.reduce(function(a, b) { return a + b; }, 0))
+				return data.reduce(function(a, b) { return a + b; }, 0);
+			});
+	})
+}
+
 function testGetData(user){
 	console.log('get data req');
 	return new Promise(function(resolve, reject){

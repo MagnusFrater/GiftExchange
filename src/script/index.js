@@ -5,7 +5,7 @@ window.onload = function () {
 function initApp () {
 	firebase.auth().onAuthStateChanged(function (user) {
 		if (user) {
-			window.location.href = "page/home.html";
+			//window.location.href = "page/home.html";
 		} else {
 			
 		}
@@ -14,8 +14,7 @@ function initApp () {
 
 // signing up
 function signup () {
-	  var email = document.getElementById('su-email').value;
-
+	   var email = document.getElementById('su-email').value;
       var password = document.getElementById('su-password').value;
       var repassword = document.getElementById('su-repassword').value;
 
@@ -34,6 +33,26 @@ function signup () {
         return;
       }
 
+      firebase.auth().createUserWithEmailAndPassword(email, password).then(function(user) {
+        var user = firebase.auth().currentUser;
+
+        initUserData(user, email);
+
+      }, function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // [START_EXCLUDE]
+        if (errorCode == 'auth/weak-password') {
+          alert('The password is too weak.');
+        } else {
+          alert(errorMessage);
+        }
+        console.log(error);
+        // [END_EXCLUDE]
+      });
+
+      /*
       // Sign in with email and pass.
       // [START createwithemail]
       firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
@@ -49,6 +68,7 @@ function signup () {
         console.log(error);
         // [END_EXCLUDE]
       });
+      */
 }
 
 function login () {
@@ -85,4 +105,35 @@ function login () {
         // [END authwithemail]
       
       document.getElementById('login').disabled = true;
+}
+
+// initialize user data on signup
+function initUserData(user, email) {
+
+    var data = {
+                  email:                email,
+                  username:             '%20',
+                  firstName:            '%20',
+                  lastName:             '%20',
+                  street:               '%20',
+                  city:                 '%20',
+                  stateProvinceRegion:  '%20',
+                  zip:                  '%20',
+                  profilePic:           '%20',
+                  ratingSum:            '0',
+                  ratingCount:          '0',
+                  state:                'incomplete-profile',
+                  interests:            '%20',
+                  friendo:              '%20'
+    }
+
+    var ref = firebase.database().ref().child("user");
+
+    ref.child(user.uid).set(data).then(function(ref) {//use 'child' and 'set' combination to save data in your own generated key
+        console.log("Initialized user data.");
+
+        window.location.href = "page/home.html";
+    }, function(error) {
+        console.log(error); 
+    });
 }
