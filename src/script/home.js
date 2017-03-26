@@ -10,6 +10,89 @@ function initApp () {
 		if (user) {
 			globalUser = user;
 
+			//var userDataExists = false;
+
+			/*
+				// check if user data exists yet
+	    		var ref = firebase.database().ref().child("user");
+				ref.on('value', function(snapshot) {
+
+					// cycle through each 'user'
+		    		snapshot.forEach(function(childSnapshot) {
+			    		// get each 'user's data
+			      		var childData = childSnapshot.val();
+
+			      		// if this is the correct user, update found variable
+			      		if (globalUser.email.valueOf() === childData.email.valueOf()) {
+			      			console.log("Found match for user email in database, returning true to 'user data exists'.");
+			      			userDataExists = true;
+			      		}
+		    		});
+				});
+
+			*/
+
+			/*
+			var checkUser = getData(user);
+			checkUser.then(function(result){
+				console.log(result);
+				if(!result){
+					//do things
+
+					// initialize empty user database info
+	            	var ref = firebase.database().ref().child("user");
+	            	var data = {
+		                email: 					user.email,
+		                username: 				'%20',
+		                firstName: 				'%20',
+		                lastName: 				'%20',
+		                street: 				'%20',
+		                city: 					'%20',
+		                stateProvinceRegion: 	'%20',
+		                zip: 					'%20',
+		                profilePic: 			'%20',
+		                ratingSum: 				'0',
+		                ratingCount: 			'0',
+		                state: 					'1'
+	            	}
+
+	            	ref.child(user.uid).set(data).then(function(ref) {//use 'child' and 'set' combination to save data in your own generated key
+	                	console.log("New user detected; created new database info.");
+	            	}, function(error) {
+	                	console.log(error); 
+	            	});
+				}
+			});
+			*/
+
+			/*
+			// if 'user' is brand new
+			if (!userDataExists) {
+            	// initialize empty user database info
+            	var ref = firebase.database().ref().child("user");
+            	var data = {
+	                email: 					user.email,
+	                username: 				'%20',
+	                firstName: 				'%20',
+	                lastName: 				'%20',
+	                street: 				'%20',
+	                city: 					'%20',
+	                stateProvinceRegion: 	'%20',
+	                zip: 					'%20',
+	                profilePic: 			'%20',
+	                ratingSum: 				'0',
+	                ratingCount: 			'0',
+	                state: 					'1'
+            	}
+
+            	ref.child(user.uid).set(data).then(function(ref) {//use 'child' and 'set' combination to save data in your own generated key
+                	console.log("New user detected; created new database info.");
+            	}, function(error) {
+                	console.log(error); 
+            	});
+            }
+            */
+
             // initialize empty database info if user data doesn't already exist
             console.log("shit: " + initUser(user));
             if (initUser(user) === 0) {
@@ -101,6 +184,27 @@ function initUser(user){
 	})
 }
 
+// returns true if 'user' data exists, false if otherwise
+function testDoesUserDataExist () {
+	// check if user data exists yet
+    var ref = firebase.database().ref().child("user");
+	ref.on('value', function(snapshot) {
+
+		// cycle through each 'user'
+    	snapshot.forEach(function(childSnapshot) {
+
+    		// get each 'user's data
+      		var childData = childSnapshot.val();
+
+      		// if this is the correct user, update found variable
+      		if (globalUser.email.valueOf() === childData.email.valueOf()) {
+      			console.log("Found match for user email in database, returning true to 'user data exists'.");
+      			userDataExists = true;
+      		}
+    	});
+	});
+}
+
 // takes new profile data and updates the database
 function updateProfile() {
 	// Update user data 
@@ -111,7 +215,7 @@ function updateProfile() {
 	var city 					= document.getElementById('up-city').value;
 	var stateProvinceRegion 	= document.getElementById('up-stateProvinceRegion').value;
 	var zip 					= document.getElementById('up-zip').value;
-	var profilePic 				= document.getElementById('up-profilepic').value;
+	//var profilePic 				= document.getElementById('up-profilePic').value;
 
 	var data = {
 	    email: 					globalUser.email,
@@ -121,9 +225,13 @@ function updateProfile() {
 	    street: 				street,
 	    city: 					city,
 	    stateProvinceRegion: 	stateProvinceRegion,
+<<<<<<< HEAD
 	    zip: 					zip,
 	    profilePic:             profilePic,
 	    state:                  (isGiftWorthy() === 0)? 'incomplete-profile' : 'profile-complete'
+=======
+	    zip: 					zip
+>>>>>>> parent of 925041d... Merge branch 'master' into Justin-Dev
     }
 
 	var ref = firebase.database().ref().child("user");
