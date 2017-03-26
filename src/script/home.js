@@ -1,13 +1,8 @@
 var globalUser = null;
+var userData = null;
 
 window.onload = function () {
 	initApp();
-
-	/*
-	firebase.auth().onAuthStateChanged(function (user) {
-		initUser(user);
-	});
-	*/
 }
 
 function getData(user){
@@ -61,7 +56,9 @@ function initApp () {
 	                profilePic: 			'%20',
 	                ratingSum: 				'0',
 	                ratingCount: 			'0',
-	                state: 					'1'
+	                state: 					'incomplete-profile',
+	                interests:              '%20',
+	                friendo:                '%20'
             	}
 
             	ref.child(user.uid).set(data).then(function(ref) {//use 'child' and 'set' combination to save data in your own generated key
@@ -79,6 +76,7 @@ function initApp () {
 
     				// get each 'user's data
       				var childData = childSnapshot.val();
+      				userData = childData;
 
       				// if this is the corrct user, put data where it belongs in the profile area
       				if (user.email.valueOf() == childData.email.valueOf()) {
@@ -151,8 +149,27 @@ function updateProfile() {
 	    city: 					city,
 	    stateProvinceRegion: 	stateProvinceRegion,
 	    zip: 					zip,
-	    profilePic:             profilePic
+	    profilePic:             profilePic,
+	    state:                  (isGiftWorthy() === 0)? 'incomplete-profile' : 'profile-complete'
     }
+
+	var ref = firebase.database().ref().child("user");
+
+    ref.child(globalUser.uid).update(data).then(function(ref) {//use 'child' and 'set' combination to save data in your own generated key
+        console.log("Updated profile info.");
+    }, function(error) {
+        console.log(error); 
+    });
+}
+
+function updateInterests () {
+	// update user interests
+	var interests = document.getElementById('interests').value;
+
+	var data = {
+		interests: interests
+	}
+
 	var ref = firebase.database().ref().child("user");
 
     ref.child(globalUser.uid).update(data).then(function(ref) {//use 'child' and 'set' combination to save data in your own generated key
@@ -164,14 +181,14 @@ function updateProfile() {
 
 // returns 1 if all profile info is good, 0 if otherwise
 function isGiftWorthy () {
-	var username = 				document.getElementById('up-username').value;
-	var firstName = 			document.getElementById('up-firstname').value;
-	var lastName = 				document.getElementById('up-lastname').value;
-	var street = 				document.getElementById('up-street').value;
-	var city = 					document.getElementById('up-city').value;
-	var stateProvinceRegion = 	document.getElementById('up-stateProvinceRegion').value;
-	var zip = 					document.getElementById('up-zip').value;
-	var profilePic = 			document.getElementById('profilePic').src;
+	var username 				= 	document.getElementById('up-username').value;
+	var firstName 				=	document.getElementById('up-firstname').value;
+	var lastName 				= 	document.getElementById('up-lastname').value;
+	var street 					= 	document.getElementById('up-street').value;
+	var city 					= 	document.getElementById('up-city').value;
+	var stateProvinceRegion 	= 	document.getElementById('up-stateProvinceRegion').value;
+	var zip 					= 	document.getElementById('up-zip').value;
+	var profilePic 				= 	document.getElementById('profilePic').src;
 
 	if (username.valueOf() 				== "" ||
 		firstName.valueOf() 			== "" ||
@@ -197,5 +214,3 @@ function match () {
 	}
 	popup.innerHTML="We will notify you when you get a match!";   
 }
-
-// When the user clicks on <div>, open the 
