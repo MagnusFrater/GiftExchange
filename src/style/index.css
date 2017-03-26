@@ -4,32 +4,36 @@
     text-align: center;
     font-size: 12rem;
     animation: titleDrop 1.25s;
+    -webkit-animation: titleDrop 1.25s;
 }
 
-@keyframes titleDrop {
-    from {opacity: 0;}
-    to {opacity: 1;}
-
-  0% {
-    transform: translateY(70%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
 .ipa {
     width: 100%;
     text-align: center;
     font-size: 3rem;
     animation-delay: .5s;
     animation: titleDrop 1.25s;
+    -webkit-animation-delay: .5s;
+    -webkit-animation: titleDrop 1.25s;
+}
+
+#description {
+    width: 50%;
+    padding-left: 25%;
+    padding-right: 25%;
+    text-align: center;
+    font-size: 2rem;
+    animation-delay: 2s;
+    animation: showDescription 4s;
 }
 
 .button {
     width: 100%;
     text-align: center;
     animation-delay: 1s;
-    animation: titleDrop 1.25s;
+    animation: buttonDrop 1.25s;
+    -webkit-animation-delay: 1s;
+    -webkit-animation: buttonDrop 1.25s;
 }
 
 ul {
@@ -74,5 +78,61 @@ input {
 #signup:hover, #login:hover {
     padding: 18px 36px;
     font-size: 25px;
+}
+
+
+@keyframes titleDrop {
+    from {opacity: 0;}
+    to {opacity: 1;}
+
+  0% {
+    transform: translateY(70%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes titleDrop {
+    from {opacity: 0;}
+    to {opacity: 1;}
+
+  0% {
+    transform: translateY(70%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes showDescription {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@-webkit-keyframes showDescription {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes buttonDrop {
+    from {opacity: 0;}
+    to {opacity: 1;}
+
+  0% {
+    transform: translateY(-200%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes buttonDrop {
+    from {opacity: 0;}
+    to {opacity: 1;}
+
+  0% {
+    transform: translateY(-200%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 

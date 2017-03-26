@@ -1,0 +1,25 @@
+#check1-1 {
+  color: green;
+}
+.status:first-letter {
+  color: red;
+}
+
+.status {
+  margin-top: 2.5%;
+  width: 100%;
+  text-align: center;
+}
+
+.status1, .status2 {
+  padding: 40px;
+  font-size: 50px;
+  overflow-x: hidden;
+}
+
+.match {
+  margin-top: 5%;
+  width: 100%;
+  text-align: center;
+  font-size: 50px;
+}

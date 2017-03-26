@@ -1,0 +1,56 @@
+.match {
+  margin-top: 100px;
+  width: 100%;
+  text-align: center;
+}
+
+#pic {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+div.stars {
+  width: 60.5%;
+  text-align: center;
+  display: inline-block;
+
+}
+ 
+input.star { display: none; }
+ 
+label.star {
+  float: right;
+  padding: 10px;
+  font-size: 36px;
+  color: #444;
+  transition: all .2s;
+}
+ 
+input.star:checked ~ label.star:before {
+  content: '\f005';
+  color: #FD4;
+  transition: all .25s;
+}
+
+input.star-1:checked ~ label.star:before { color: #F62; }
+label.star:before {
+  content: '\f006';
+  font-family: FontAwesome;
+}
+
+.button {
+  width: 100%;
+  text-align: center;
+}
+
+#rate {
+  text-align: center;
+    cursor: pointer;
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
