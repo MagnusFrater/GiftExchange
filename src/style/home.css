@@ -45,7 +45,7 @@ input {
   height: 400px;
 }
 
-#updateprofile, #startgifting, #logout {
+#updateprofile, #startgifting, #logout, #toStatus {
     background-color: #76323F;
     border: none;
     color: #D7CEC7;
@@ -56,6 +56,7 @@ input {
     font-size: 16px;
     -webkit-transition: padding .5s, font-size .8s; /* For Safari 3.1 to 6.0 */
     transition: padding .5s, font-size .8s;
+    cursor: pointer;
 }
 
 #startgifting:hover, #logout:hover {
@@ -63,6 +64,11 @@ input {
    font-size: 22px;
 }
 
+.navbutt {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+}
 
 .updateprofile {
 	width: 100%;
