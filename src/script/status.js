@@ -28,7 +28,7 @@ function initApp () {
 
       					// color check marks according to 'user' state
       					// change action button around depending on 'user' state
-      					document.getElementById('status-1').innerHTML = childData.username + ": " + childData.state;
+      					document.getElementById('status-1').innerHTML = ((childData.username.valueOf() == "%20")? '\'Username\'' : childData.username) + ": " + childData.state;
 
       					if (childData.state.valueOf() == "incomplete-profile") {
       						document.getElementById('x-1').style.color = "red";
@@ -321,6 +321,15 @@ function findMatch () {
 	searchForUnmatchedUser();
 }
 
+function showModal (whichPic) {
+	if (whichPic == "pic1") {
+		document.getElementById('modal-username').innerHTML = globalUser.username;
+	}
+
+	if (whichPic == "pic2") {
+		document.getElementById('modal-username').innerHTML = globalFriendo.username;
+	}
+}
 
 
 
