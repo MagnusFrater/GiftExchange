@@ -51,8 +51,8 @@ input {
 
 #profilePic {
   width: 100px;
-  min-width: 100px;
-  max-width: 100px;
+  min-width: 250px;
+  max-width: 25a0px;
 }
 
 div.stars {
