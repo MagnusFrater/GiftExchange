@@ -130,6 +130,8 @@ function doAction () {
 	// handles when both parties received their gifts, and are ready to rate their friendo
 	if (actionText.valueOf() == "I'm ready to rate my friendo!") {
 		updateState("rate-friendo");
+
+		window.location.href = "rating.html";
 	}
 }
 
