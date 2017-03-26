@@ -65,7 +65,7 @@ function resetFriendo () {
 	console.log(globalUser);
 
     ref.child(globalUser.uid).update(data).then(function(ref) {//use 'child' and 'set' combination to save data in your own generated key
-        //window.location.href = "home.html";
+        window.location.href = "home.html";
     }, function(error) {
         console.log(error); 
     });
