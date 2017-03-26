@@ -5,6 +5,7 @@ make popup when succesffully updating profile
 profile picture 'circle' is actually an oval
 rating stars are broken on linux/firefox?
 on status.html, click on either profile pic and get modal that displays their shit (ie. username, interests, address)
+%20 (username) on status.html when state is 'incomplete-profile'
 
 
 user states
