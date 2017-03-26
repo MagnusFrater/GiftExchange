@@ -292,10 +292,16 @@ function isGiftWorthy () {
 }
 
 function match () {
+	var popup = document.getElementById("myPopup");
 	if (!isGiftWorthy()) {
-		alert("Profile is incomplete!");
+		//alert("Profile is incomplete!");
+		popup.innerHTML="Profile is incomplete!";
+		setTimeout(function(){ popup.classList.toggle("show"); }, 5000);
 		return;
 	}
-
-	alert("Will receive text when matched!");
+	popup.innerHTML="We will notify you when you get a match!";
+    popup.classList.toggle("show");
+    
 }
+
+// When the user clicks on <div>, open the 
