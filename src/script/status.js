@@ -273,7 +273,12 @@ function searchForUnmatchedUser () {
 						username: childData.username,
 						email: childData.email,
 						state: childData.state,
-						profilePic: childData.profilePic
+						profilePic: childData.profilePic,
+						interests: childData.interests,
+						street: childData.street,
+						city: childData.city,
+						stateProvinceRegion: childData.stateProvinceRegion,
+						zip: childData.zip
 					}
 
 					updateFriendo(data);
@@ -303,7 +308,12 @@ function checkIfMatched (user) {
 						username: childData.username,
 						email: childData.email,
 						state: childData.state,
-						profilePic: childData.profilePic
+						profilePic: childData.profilePic,
+						interests: childData.interests,
+						street: childData.street,
+						city: childData.city,
+						stateProvinceRegion: childData.stateProvinceRegion,
+						zip: childData.zip
 					}
 
 					updateFriendo(data);
