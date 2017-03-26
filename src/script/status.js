@@ -161,8 +161,7 @@ function updateFriendo (friendo) {
     ref.child(globalUser.uid).update(data).then(function(ref) {//use 'child' and 'set' combination to save data in your own generated key
         console.log("Updated user state.");
 
-        console.log(globalUser);
-        if (globalUser.state.valueOf() == "looking") {
+        if (document.getElementById('actionButton').innerHTML == "Waiting for match...") {
         	updateState("matched");
         }
 
