@@ -85,7 +85,29 @@ function login () {
           alert('Please enter a password.');
           return;
         }
+
+        firebase.auth().signInWithEmailAndPassword(email, password).then(function(user) {
+            // Success
+
+            window.location.href = "page/home.html";
+        }).catch(function(error) {
+            // Error Handling
+
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // [START_EXCLUDE]
+            if (errorCode === 'auth/wrong-password') {
+              alert('Wrong password.');
+            } else {
+              alert(errorMessage);
+            }
+            console.log(error);
+            document.getElementById('login').disabled = false;
+            // [END_EXCLUDE]
+        });
         
+        /*
         // Sign in with email and pass.
         // [START authwithemail]
         firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
@@ -105,26 +127,27 @@ function login () {
         // [END authwithemail]
       
       document.getElementById('login').disabled = true;
+      */
 }
 
 // initialize user data on signup
 function initUserData(user, email) {
 
     var data = {
-                  email:                email,
-                  username:             '%20',
-                  firstName:            '%20',
-                  lastName:             '%20',
-                  street:               '%20',
-                  city:                 '%20',
-                  stateProvinceRegion:  '%20',
-                  zip:                  '%20',
-                  profilePic:           '%20',
-                  ratingSum:            '0',
-                  ratingCount:          '0',
-                  state:                'incomplete-profile',
-                  interests:            '%20',
-                  friendo:              '%20'
+        email:                email,
+        username:             '%20',
+        firstName:            '%20',
+        lastName:             '%20',
+        street:               '%20',
+        city:                 '%20',
+        stateProvinceRegion:  '%20',
+        zip:                  '%20',
+        profilePic:           '%20',
+        ratingSum:            '0',
+        ratingCount:          '0',
+        state:                'incomplete-profile',
+        interests:            '%20',
+        friendo:              '%20'
     }
 
     var ref = firebase.database().ref().child("user");

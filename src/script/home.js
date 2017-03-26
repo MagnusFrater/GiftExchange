@@ -63,6 +63,8 @@ function initApp () {
       					document.getElementById('up-zip').value 				= (childData.zip.valueOf() == "%20")? 					"" : childData.zip;
       					document.getElementById('profilePic').src 				= (childData.profilePic.valueOf() == "%20")? 			"../resources/profile pics/silhouette.jpg" : childData.profilePic;
       					document.getElementById('up-profilepic').value          = (childData.profilePic.valueOf() == "%20")?			"" : childData.profilePic;
+      					document.getElementById('interests').value 				= (childData.interests.valueOf() == "%20")? 			"" : childData.interests;
+      					
       				}
 
       				console.log("Profile info pulled.");
