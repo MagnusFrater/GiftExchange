@@ -12,7 +12,9 @@ function initApp () {
 
 			/*
             // initialize empty database info if user data doesn't already exist
-            if (initUser(user) == 0) {
+            console.log("shit: " + initUser(user));
+            if (initUser(user) === 0) {
+            	console.log("after");
             	// initialize empty user database info
             	var ref = firebase.database().ref().child("user");
             	var data = {
@@ -40,7 +42,7 @@ function initApp () {
             }
             */
 
-            // get 'user' data to populate the profile page
+            //get 'user' data to populate the profile page
             var ref = firebase.database().ref().child("user");
 			ref.on('value', function(snapshot) {
 				// cycle through each 'user'
@@ -149,6 +151,7 @@ function updateInterests () {
 
     ref.child(globalUser.uid).update(data).then(function(ref) {//use 'child' and 'set' combination to save data in your own generated key
         console.log("Updated profile info.");
+        window.location.href = "status.html";
     }, function(error) {
         console.log(error); 
     });

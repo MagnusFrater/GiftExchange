@@ -41,6 +41,10 @@ input {
   padding-right: 10px;
 }
 
+#list3 {
+  height: 400px;
+}
+
 #updateprofile, #startgifting, #logout {
     background-color: #76323F;
     border: none;
@@ -64,6 +68,29 @@ input {
 	width: 100%;
   cursor: pointer;
   text-align: center;
+}
+
+textarea {
+  font-size: 30px;
+  width: 99.2%;
+  overflow-x: hidden;
+}
+
+.interestsbutton {
+  width: 100%;
+  text-align: center;
+}
+#interests {
+  text-align: center;
+  background-color: #76323F;
+    border: 1px solid 565656;
+    color: #D7CEC7;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer; 
 }
 
 #up {
