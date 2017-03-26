@@ -11,7 +11,6 @@ function initApp () {
 
 			globalUser = user;
 			checkIfMatched(user);
-			injectFirstModal(user);
 
 			var ref = firebase.database().ref().child("user");
 			ref.on('value', function(snapshot) {
@@ -331,15 +330,6 @@ function findMatch () {
 	updateState("looking");
 
 	searchForUnmatchedUser();
-}
-
-function injectFirstModal (user) {
-	document.getElementById('username1').innerHTML = user.username;
-	document.getElementById('interests1').innerHTML = user.interests;
-	document.getElementById('street1').innerHTML = user.street;
-	document.getElementById('city1').innerHTML = user.city;
-	document.getElementById('spr1').innerHTML = user.stateProvinceRegion;
-	document.getElementById('zip1').innerHTML = user.zip;
 }
 
 function injectSecondModal (friendo) {
