@@ -20,7 +20,7 @@ function initApp () {
 
       				// if this is the corrct user, put data where it belongs in the profile area
       				if (user.email.valueOf() == childData.email.valueOf()) {
-      					document.getElementById('pic').src = (childData.friendo.profilePic.valueOf() == "%20")? "../resources/profile pics/silhouette.jpg" : childData.friendo.profilePic;
+      					document.getElementById('pic').src = (childData.friendo.profilePic == "%20")? "../resources/profile pics/silhouette.jpg" : childData.friendo.profilePic;
       				}
 
       				console.log("Profile info pulled.");
@@ -37,7 +37,6 @@ function initApp () {
 function rateFriendo () {
 	resetFriendo();
 	updateState("profile-complete");
-	//window.location.href = "home.html";
 }
 
 // updates currently logged in user's state
@@ -50,6 +49,8 @@ function updateState (state) {
 
     ref.child(globalUser.uid).update(data).then(function(ref) {//use 'child' and 'set' combination to save data in your own generated key
         console.log("Updated user state.");
+
+        window.location.href = "home.html";
     }, function(error) {
         console.log(error); 
     });
