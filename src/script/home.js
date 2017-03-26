@@ -129,9 +129,7 @@ function initApp () {
             */
 
             // initialize empty database info if user data doesn't already exist
-            var sum = initUser(user);
-            console.log(sum);
-            if (!sum) {
+            if (initUser(user) == 0) {
             	// initialize empty user database info
             	var ref = firebase.database().ref().child("user");
             	var data = {
@@ -208,6 +206,7 @@ function initUser(user){
 		.all(promList)
 			.then(function(data){
 				console.log(data);
+				console.log(data.reduce(function(a, b) { return a + b; }, 0))
 				return data.reduce(function(a, b) { return a + b; }, 0);
 			});
 	})
