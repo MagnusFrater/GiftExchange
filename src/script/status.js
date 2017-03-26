@@ -11,6 +11,7 @@ function initApp () {
 
 			globalUser = user;
 			checkIfMatched(user);
+			injectFirstModal(user);
 
 			var ref = firebase.database().ref().child("user");
 			ref.on('value', function(snapshot) {
@@ -25,6 +26,7 @@ function initApp () {
       					// save friendo's username
       					globalFriendo = childData.friendo;
       					updateFriendoInfo(childData.friendo);
+      					injectSecondModal(childData.friendo);
 
       					// color check marks according to 'user' state
       					// change action button around depending on 'user' state
@@ -331,17 +333,23 @@ function findMatch () {
 	searchForUnmatchedUser();
 }
 
-function showModal (whichPic) {
-	if (whichPic == "pic1") {
-		document.getElementById('modal-username').innerHTML = globalUser.username;
-	}
-
-	if (whichPic == "pic2") {
-		document.getElementById('modal-username').innerHTML = globalFriendo.username;
-	}
+function injectFirstModal (user) {
+	document.getElementById('username1').innerHTML = user.username;
+	document.getElementById('interests1').innerHTML = user.interests;
+	document.getElementById('street1').innerHTML = user.street;
+	document.getElementById('city1').innerHTML = user.city;
+	document.getElementById('spr1').innerHTML = user.stateProvinceRegion;
+	document.getElementById('zip1').innerHTML = user.zip;
 }
 
-
+function injectSecondModal (friendo) {
+	document.getElementById('username2').innerHTML = friendo.username;
+	document.getElementById('interests2').innerHTML = friendo.interests;
+	document.getElementById('street2').innerHTML = friendo.street;
+	document.getElementById('city2').innerHTML = friendo.city;
+	document.getElementById('spr2').innerHTML = friendo.stateProvinceRegion;
+	document.getElementById('zip2').innerHTML = friendo.zip;
+}
 
 /*
 function testDoesUserExist(user, databaseUser){
